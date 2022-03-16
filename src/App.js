@@ -30,10 +30,21 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Subject 
+        {/*<Subject 
           title={this.state.subject.title} 
           sub={this.state.subject.sub}>
-        </Subject>
+    </Subject>*/}
+        <header>
+          <h1><a href="/" onClick={function(e){
+            e.preventDefault(); //a태그의 기본적인 동작 방법을 금지시킴.
+            //debugger; 사용시 디버거부분까지만 실행됨.
+            //this.state.mode = 'welcome' this를 찾을수 없어서 끝에 bind(this)를 붙여야함.
+            this.setState({
+              mode:'welcome'
+            })
+          }.bind(this)}>{this.state.subject.title}</a></h1>
+          {this.state.subject.sub}
+        </header>
         <TOC data={this.state.contents}></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
