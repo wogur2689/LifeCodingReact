@@ -37,6 +37,7 @@ function Nav(props){
 }
 
 function App() {
+  const mode = 'WELCOME';
   const topics = [
     {id:1, title:'HTML', desc:'HTML is HyperText ...'}, 
     {id:2, title:'CSS', desc:'CSS is for design'},
